@@ -3,9 +3,12 @@ import Mensagem from './components/Mensagem'
 import {useState} from 'react';
 
 function App(){
-
   //parâmetros - nome do estado e nome da função que vai trocar o valor desse estado
   const [nome, setNome] = useState('José Amaral');
+
+  function handleChangeName(nome){
+    setNome(nome);
+  }
 
   //jsx (javascript xml)
   return(
@@ -13,7 +16,7 @@ function App(){
       <h1>Componente APP</h1>
       <br/>
       <h2>Olá: {nome} </h2>
-      <button>
+      <button onClick={() => handleChangeName("Rizller Souza")}>
           Mudar Nome
       </button>
       <Mensagem nome="Rizller" idade={34} />  
